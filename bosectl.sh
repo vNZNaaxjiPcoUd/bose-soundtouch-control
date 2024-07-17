@@ -7,19 +7,6 @@ PORT="17000"
 # Device Configuration
 device='/dev/tcp/'$IP'/'$PORT
 
-# Get Preset Info & Volume
-
-volume="121385"
-presets=$'qyk\nKAZN\nHABANA\nWawaii\nCNN\nWDAV\n'
-
-declare preset=(0 1 2 3 4 5 6)
-preset[1]="$(echo "$presets" | awk 'NR==1 {print}')"
-preset[2]="$(echo "$presets" | awk 'NR==2 {print}')"
-preset[3]="$(echo "$presets" | awk 'NR==3 {print}')"
-preset[4]="$(echo "$presets" | awk 'NR==4 {print}')"
-preset[5]="$(echo "$presets" | awk 'NR==5 {print}')"
-preset[6]="$(echo "$presets" | awk 'NR==6 {print}')"
-
 # Help Information
 help=$"
 Bose SoundTouch App\n
@@ -45,15 +32,12 @@ case $1 in
   up)
     echo "volume +5"
     echo 'sys volume up 5' > $device
-    #echo "new volume level" $(expr $volume + 5)
     ;;
   down)
     echo "volume -5"
     echo 'sys volume down 5' > $device 
-    #echo "new volume level" $(expr $volume - 5)
     ;;
   1|2|3|4|5|6)
-    # echo 'preset station '$1' selected (' ${preset[$1]} ')'
     echo 'preset station '$1''
     echo 'sys presetkey '$1' p' > $device
     ;;
