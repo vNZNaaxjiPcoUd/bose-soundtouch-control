@@ -12,17 +12,7 @@ help=$"
 Bose SoundTouch App\n
 \n
 Help:\n
-vvbose {power|up|u|down|d|v #|volume|#|presets|prev|next|play|stop|pause|mute|aux|now}\n
-\n
-where:\n
-power   - toggles the speaker ON/OFF\n
-up      - increases the volume\n
-down    - decreases the volume\n
-volume  - display the current volume\n
-1-6     - select preset 1..6 (bose 1 = station preset 1)\n
-presets - show current preset information\n
-mute    - mute\n
-now     - status now\n"
+vvbose {power|up|u|down|d|v #|volume|#|presets|prev|next|play|stop|pause|mute|aux|now}\n"
 
 case $1 in
   power|on|off)
