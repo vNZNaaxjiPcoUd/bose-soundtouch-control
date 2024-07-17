@@ -3,11 +3,11 @@
 Modify the IP for your bose soundtouch speaker first. then you can run this script to control your speaker.
 
 ```
-bosectl help
+$bosectl help
 
-bosectl power
+$bosectl power
 
-bosectl aux
+$bosectl aux
 
-bosectl now
+$bosectl now
 ```
